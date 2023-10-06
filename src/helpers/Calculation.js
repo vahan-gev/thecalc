@@ -9,9 +9,7 @@ async function generateResponse(operation, expression) {
     });
     const apiUrl = `https://newton.now.sh/api/v2/${operation}/${combinedStr}`;
 
-    const response = await fetch(apiUrl).catch(() => {
-      console.log("Error fetching data from API")
-    });
+    const response = await fetch(apiUrl)
     if (!response.ok) {
       throw new Error(`Network response was not ok. Status: ${response.status}`);
     }
